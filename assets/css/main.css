@@ -3741,5 +3741,15 @@ input, select, textarea {
     padding: 1rem;
     z-index: 10;
 }
-
+.download-btn-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 2rem;
+  }
+  
+  .download-btn-container a {
+	font-size: 1.2rem;
+	padding: 1rem 2rem;
+  }
+  
 
