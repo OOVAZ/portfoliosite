@@ -11,8 +11,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-
 	</head>
 	<body class="is-preload">
 
@@ -111,33 +109,33 @@
 							</section>
 
 						<!-- Panel -->
-							<section class="panel color4-alt">
-								<div class="intro color4">
-									<h2 class="major">Contact Me</h2>
-									<p>For more information or for a current copy of my <strong>Resume</strong> send me a message!</p>
-								</div>
-								<div class="inner columns divided">
-									<div class="span-3-25">
-										<form method="post" action="#">
-											<div class="fields">
-												<div class="field half">
-													<label for="name">Name</label>
-													<input type="text" name="name" id="name" />
-												</div>
-												<div class="field half">
-													<label for="email">Email</label>
-													<input type="email" name="email" id="email" />
-												</div>
-												<div class="field">
-													<label for="message">Message</label>
-													<textarea name="message" id="message" rows="4"></textarea>
-												</div>
+						<section class="panel color4-alt">
+							<div class="intro color4">
+								<h2 class="major">Contact Me</h2>
+								<p>For more information or for a current copy of my <strong>Resume</strong> send me a message!</p>
+							</div>
+							<div class="inner columns divided">
+								<div class="span-3-25">
+									<form method="post" action="send-email.php">
+										<div class="fields">
+											<div class="field half">
+												<label for="name">Name</label>
+												<input type="text" name="name" id="name" />
 											</div>
-											<ul class="actions">
-												<li><input type="submit" value="Send Message" class="button primary" /></li>
-											</ul>
-										</form>
-									</div>
+											<div class="field half">
+												<label for="email">Email</label>
+												<input type="email" name="email" id="email" />
+											</div>
+											<div class="field">
+												<label for="message">Message</label>
+												<textarea name="message" id="message" rows="4"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" class="button primary" /></li>
+										</ul>
+									</form>
+								</div>
 									<div class="span-1-5">
 										<ul class="contact-icons color1">
 											<li class="icon brands fa-twitter"><a href="#">@untitled-tld</a></li>
@@ -149,6 +147,16 @@
 									</div>
 								</div>
 							</section>
+							<script type="text/javascript">
+								const form = document.getElementById('contact-form');
+								form.addEventListener('submit', function(event) {
+									event.preventDefault();
+									const name = document.getElementById('name').value;
+									const email = document.getElementById('email').value;
+									const message = document.getElementById('message').value;
+									window.location.href = `mailto:me@manuelsavo.com?subject=Message%20from%20${name}%20-%20${email}&body=${message}`;
+								});
+							</script>
 
 						
 
